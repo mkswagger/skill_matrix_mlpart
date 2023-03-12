@@ -3,6 +3,8 @@
 
 <p>https://www.pragnakalp.com/case-study/nlp-resume-parser-bert-python/</p>
 
+<P>https://blog.apilayer.com/build-your-own-resume-parser-using-python-and-nlp/</p>
+
 
 
 

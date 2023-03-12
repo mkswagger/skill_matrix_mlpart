@@ -7,6 +7,10 @@
 
 <p>https://www.youtube.com/watch?v=HJy11kOlgvk</p>
 
+<P>https://towardsdatascience.com/a-review-of-named-entity-recognition-ner-using-automatic-summarization-of-resumes-5248a75de175</p>
+
+<p>https://github.com/DataTurks-Engg/Entity-Recognition-In-Resumes-SpaCy/blob/master/testdata.json</P>
+
 
 
 

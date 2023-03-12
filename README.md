@@ -5,6 +5,8 @@
 
 <P>https://blog.apilayer.com/build-your-own-resume-parser-using-python-and-nlp/</p>
 
+<p>https://www.youtube.com/watch?v=HJy11kOlgvk</p>
+
 
 
 

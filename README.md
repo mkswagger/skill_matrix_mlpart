@@ -11,6 +11,8 @@
 
 <p>https://github.com/DataTurks-Engg/Entity-Recognition-In-Resumes-SpaCy/blob/master/testdata.json</P>
 
+<p>https://www.kaggle.com/code/mohamedtaha7/fork-of-named-entity-recognition-bert</p>
+
 
 # MODELS EXAMPLES
 

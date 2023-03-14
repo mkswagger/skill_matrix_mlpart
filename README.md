@@ -12,9 +12,14 @@
 <p>https://github.com/DataTurks-Engg/Entity-Recognition-In-Resumes-SpaCy/blob/master/testdata.json</P>
 
 
+# MODELS EXAMPLES
 
+<p> https://github.com/narendrago/Resume-Parser-Summariser-NLP/blob/main/Resume_Parser.ipynb</p>
 
 
 # Datasets available:
 
 <p>https://www.kaggle.com/datasets/gauravduttakiit/resume-dataset?resource=download</p>
+
+
+

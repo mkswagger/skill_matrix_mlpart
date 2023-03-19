@@ -23,6 +23,7 @@
 
 #### resume helper
 <p> https://github.com/Akash1070/AI-Resume-Analyser-With-NLP/blob/main/App.py </p>
+<p> https://github.com/TusharJaiswal7/Smart-Resume-Analyser </p>
 
 
 # Datasets available:

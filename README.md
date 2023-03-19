@@ -33,3 +33,11 @@
 
 
 
+#final
+<p>https://github.com/saichaitanya93/data_extraction_from_resume/blob/main/data_extraction_from_resume.ipynb</p>
+<p> https://github.com/narendrago/Resume-Parser-Summariser-NLP/blob/main/Resume_Parser.ipynb </p>
+
+<p> https://github.com/umer0114/Resume-analyser-machinelearning/blob/master/info_extractor.py</p>
+
+
+

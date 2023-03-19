@@ -17,6 +17,7 @@
 # MODELS EXAMPLES
 
 <p> https://github.com/narendrago/Resume-Parser-Summariser-NLP/blob/main/Resume_Parser.ipynb</p>
+<p> https://github.com/shubham777/Resume-phrase-Matcher </p>
 
 
 # Datasets available:

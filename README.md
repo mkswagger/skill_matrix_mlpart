@@ -21,6 +21,9 @@
 <p> https://github.com/umer0114/Resume-analyser-machinelearning/blob/master/machine_learning.py </p>
 <p> https://github.com/ShyamKaushik/Resume-Analyser/blob/master/ResumeHelper.ipynb </p>
 
+#### resume helper
+<p> https://github.com/Akash1070/AI-Resume-Analyser-With-NLP/blob/main/App.py </p>
+
 
 # Datasets available:
 

@@ -19,6 +19,7 @@
 <p> https://github.com/narendrago/Resume-Parser-Summariser-NLP/blob/main/Resume_Parser.ipynb</p>
 <p> https://github.com/shubham777/Resume-phrase-Matcher </p>
 <p> https://github.com/umer0114/Resume-analyser-machinelearning/blob/master/machine_learning.py </p>
+<p> https://github.com/ShyamKaushik/Resume-Analyser/blob/master/ResumeHelper.ipynb </p>
 
 
 # Datasets available:

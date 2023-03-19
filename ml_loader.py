@@ -68,9 +68,12 @@ def extractTrainingText(resumes, currentSet):
 
 
 def trainDataSet():
+    print('processingSet:', processingSet)
+    print('trainResumePathDictionary:', trainResumePathDictionary)
     for currentSet in processingSet:
         dataFrameDictionary[currentSet] = extractTrainingText(trainResumePathDictionary[currentSet], currentSet)
         print('----------Extraction completed for dataset: ' + currentSet + '------------')
+
 
 
 def fetchValuesForTraining(currentDataset):

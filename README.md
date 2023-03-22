@@ -25,6 +25,7 @@
 #### resume helper
 <p> https://github.com/Akash1070/AI-Resume-Analyser-With-NLP/blob/main/App.py </p>
 <p> https://github.com/TusharJaiswal7/Smart-Resume-Analyser </p>
+<p> https://github.com/RudreshVeerkhare/Recruitment-Assisting-Platform/blob/master/scraping/indeed_scraper.py</p>
 
 
 # Datasets available:

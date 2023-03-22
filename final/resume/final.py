@@ -22,19 +22,52 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 import io
 import os
+import re
 
 
 
 filename="arindam.pdf"
-i_f = open(filename,'rb')
-resMgr = PDFResourceManager()
-retData = io.StringIO()
-TxtConverter = TextConverter(resMgr,retData, laparams= LAParams())
-interpreter = PDFPageInterpreter(resMgr,TxtConverter)
+# i_f = open(filename,'rb')
+# resMgr = PDFResourceManager()
+# retData = io.StringIO()
+# TxtConverter = TextConverter(resMgr,retData, laparams= LAParams())
+# interpreter = PDFPageInterpreter(resMgr,TxtConverter)
+# for page in PDFPage.get_pages(i_f):
+#     interpreter.process_page(page)
+#     txt = retData.getvalue()
+#     print(txt)
+
+i_f = open(filename, 'rb')
+res_mgr = PDFResourceManager()
+ret_data = io.StringIO()
+txt_converter = TextConverter(res_mgr, ret_data, laparams=LAParams())
+interpreter = PDFPageInterpreter(res_mgr, txt_converter)
 for page in PDFPage.get_pages(i_f):
     interpreter.process_page(page)
-    txt = retData.getvalue()
-    print(txt)
+    resume_text = ret_data.getvalue()
+print(resume_text)
+# Read the skills list from the linkedinskills.txt file
+with open('linkedinskills', encoding='utf-8') as skill_file:
+    skills_list = [line.strip().lower() for line in skill_file]
+
+# Initialize an empty list to store the extracted skills
+extracted_skills = []
+
+# Loop through the skills list and look for matches in the resume text
+for skill in skills_list:
+    # Use regular expressions to find matches for the skill
+    #p = re.compile(regexPart1 + re.escape(term) + regexPart2 , re.IGNORECASE)
+    regexPart1 = r"\s"
+    regexPart2 = r"(?:s|'s|!+|,|\.|;|:|\(|\)|\"|\?+)?\s"  
+    pattern = re.compile(regexPart1 + re.escape(skill) + regexPart2, re.IGNORECASE)
+    matches = re.findall(pattern, resume_text)
+    # If matches are found, add the skill to the list
+    if matches:
+        extracted_skills.append(skill)
+
+# Print the list of extracted skills
+print("Extracted skills: ", extracted_skills)
+
 
 # !pip install spacy
 
@@ -80,7 +113,7 @@ for page in PDFPage.get_pages(i_f):
 def get_skills(document):
     skill_terms = []
     
-    with open("linkedin skill", 'r',encoding="utf-8") as file:
+    with open("linkedinskill", 'r',encoding="utf-8") as file:
         skill_terms = file.readlines()
     
     skill_terms = [term.strip('\n') for term in skill_terms]
@@ -102,7 +135,38 @@ def get_skills(document):
             if pair in skill_terms:
                 if pair not in skills:
                     skills.append(pair)
-                    
     return (skills)
-     
-get_skills(txt)
+#get_skills(txt)            
+#     
+# import PyPDF2
+# import re
+
+# import pdfreader
+# from pdfreader import PDFDocument, SimplePDFViewer
+# fd = open(file_name, "rb")
+# doc = PDFDocument(fd)
+
+# def extract_skills_from_resume(file_path):
+#     # Open the PDF file in read-binary mode
+#     with open(file_path, 'rb') as f:
+#         # Create a PDF reader object
+#         pdf_reader = PyPDF2.PdfFileReader(f)
+#         # Get the first page of the PDF
+#         first_page = pdf_reader.getPage(0)
+#         # Extract the text from the first page
+#         text = first_page.extractText()
+#         # Define a list of skills to look for
+#         skills_list = ['Python', 'Java', 'C++', 'JavaScript', 'HTML', 'CSS', 'SQL']
+#         # Initialize an empty list to store the extracted skills
+#         skills = []
+#         # Loop through the skills list and look for matches in the text
+#         for skill in skills_list:
+#             # Use regular expressions to find matches for the skill
+#             pattern = re.compile(skill, re.IGNORECASE)
+#             matches = re.findall(pattern, text)
+#             # If matches are found, add the skill to the list
+#             if matches:
+#                 skills.append(skill)
+#         # Return the list of extracted skills
+#         return skills
+# extract_skills_from_resume(filename)

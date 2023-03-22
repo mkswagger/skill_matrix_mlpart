@@ -21,10 +21,10 @@ for dirname, _, filenames in os.walk('/content/drive/MyDrive/resume_parser/pt2')
 
 
 
-from google.colab import drive
-drive.mount('/content/drive')
+# from google.colab import drive
+# drive.mount('/content/drive')
 
-!pip install pdfminer-six
+# !pip install pdfminer-six
 
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -65,7 +65,7 @@ def get_phone_numbers(string):
 phone_number= get_phone_numbers(txt)
 print(phone_number)
 
-!pip install nlp
+# !pip install nlp
 
 # extract name
 
@@ -158,8 +158,6 @@ for element in external_source:
 
 ## Extract Skill Ver 2.0 ##
 
-import spacy
-import pandas as pd
 
 # load pre-trained model
 nlp = spacy.load('en_core_web_sm')
@@ -170,8 +168,6 @@ with open('/content/drive/MyDrive/resume_parser/pt2/linkedin skill') as f:
     
 for element in external_source:
     result.append(element.strip().lower())
-
-import spacy
 
 # load pre-trained model
 nlp = spacy.load('en_core_web_sm')

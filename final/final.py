@@ -14,7 +14,7 @@ file_name = "arindam.pdf"
 
 urllib.request.urlretrieve(url, file_name)
 
-!pip install pdfminer-six
+# !pip install pdfminer-six
 
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
@@ -25,18 +25,18 @@ import os
 
 
 
-filename="arindam.pdf"
-i_f = open(filename,'rb')
-resMgr = PDFResourceManager()
-retData = io.StringIO()
-TxtConverter = TextConverter(resMgr,retData, laparams= LAParams())
-interpreter = PDFPageInterpreter(resMgr,TxtConverter)
-for page in PDFPage.get_pages(i_f):
-    interpreter.process_page(page)
-    txt = retData.getvalue()
-    print(txt)
+# filename="arindam.pdf"
+# i_f = open(filename,'rb')
+# resMgr = PDFResourceManager()
+# retData = io.StringIO()
+# TxtConverter = TextConverter(resMgr,retData, laparams= LAParams())
+# interpreter = PDFPageInterpreter(resMgr,TxtConverter)
+# for page in PDFPage.get_pages(i_f):
+#     interpreter.process_page(page)
+#     txt = retData.getvalue()
+#     print(txt)
 
-!pip install spacy
+# !pip install spacy
 
 # import spacy
 
@@ -70,10 +70,64 @@ for page in PDFPage.get_pages(i_f):
 
 # extract_skill_1(txt)
 
-result = []
-with open('linkedin skill') as f:
-    external_source = list(f)
+# result = []
+# with open('linkedin skill',encoding="utf-8") as f:
+#     external_source = list(f)
+#     for element in external_source:
+#         result.append(element.strip().lower())
+#     print(result)
+
+# def get_skills(document):
+#     skill_terms = []
     
-for element in external_source:
-    result.append(element.strip().lower())
-print(result)
+#     with open("linkedin skill", 'r',encoding="utf-8") as file:
+#         skill_terms = file.readlines()
+    
+#     skill_terms = [term.strip('\n') for term in skill_terms]
+#     skills = []
+    
+#     for line in document:
+#         words = line.split(' ')
+        
+#         for word in words:
+#             if word in skill_terms:
+#                 if word not in skills:
+#                     skills.append(word)
+                    
+        # word_pairs = []
+        # for i in zip(words[:-1], words[1:]):
+        #     word_pairs.append(i[0] + ' ' + i[1])   #This is to find skills like 'data science' i.e skills containint two words.    return (skills)
+            
+        # for pair in word_pairs:
+        #     if pair in skill_terms:
+        #         if pair not in skills:
+        #             skills.append(pair)
+                    
+#     
+import PyPDF2
+import re
+
+def extract_skills_from_resume(file_path):
+    # Open the PDF file in read-binary mode
+    with open(file_path, 'rb') as f:
+        # Create a PDF reader object
+        pdf_reader = PyPDF2.PdfFileReader(f)
+        # Get the first page of the PDF
+        first_page = pdf_reader.getPage(0)
+        # Extract the text from the first page
+        text = first_page.extractText()
+        # Define a list of skills to look for
+        skills_list = ['Python', 'Java', 'C++', 'JavaScript', 'HTML', 'CSS', 'SQL']
+        # Initialize an empty list to store the extracted skills
+        skills = []
+        # Loop through the skills list and look for matches in the text
+        for skill in skills_list:
+            # Use regular expressions to find matches for the skill
+            pattern = re.compile(skill, re.IGNORECASE)
+            matches = re.findall(pattern, text)
+            # If matches are found, add the skill to the list
+            if matches:
+                skills.append(skill)
+        # Return the list of extracted skills
+        return skills
+extract_skills_from_resume(filename)
